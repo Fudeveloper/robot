@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/js/plugins/contextMenu/css/contextMenu.css">
+<link rel="stylesheet" href="/css/device/monitor.css">
+
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include::header"></head>
+<body>
+<div class="main">
+
+    <div style="clear: both"></div>
+    <ul class="content">
+
+        <li>
+            <a href="">料库</a>
+
+            <div class="i1">
+                <div class="i1_top">
+                    <img src="/img/device/waiting/1.gif" alt="1.gif" id="img1">
+                </div>
+                <div class="i1_bottom">
+                    <img src="/img/device/waiting/2.gif" alt="2.gif" id="img2">
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">下料区</a>
+
+            <div class="i2">
+                <div class="i2_top">
+                    <img src="/img/device/waiting/3.gif" alt="3.gif" id="img3">
+
+                </div>
+                <div class="i2_bottom">
+                    <img src="/img/device/waiting/4.gif" alt="4.gif" id="img4">
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">折弯&压铆区</a>
+
+            <div class="i3">
+                <div class="i3_top">
+                    <img src="/img/device/waiting/5.gif" alt="5.gif" id="img5">
+                </div>
+                <div class="i3_bottom">
+                    <img src="/img/device/waiting/6.gif" alt="6.gif" id="img6">
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">焊接区</a>
+
+            <div class="i4">
+                <div class="i4_top">
+                    <img src="/img/device/waiting/7.gif" id="img7" alt="7.gif"/>
+
+                </div>
+                <div class="i4_middle">
+                    <img src="/img/device/waiting/8.gif" alt="8.gif" id="img8">
+                </div>
+                <div class="i4_bottom">
+                    <img src="/img/device/waiting/9.gif" alt="9.gif" id="img9">
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">表面处理</a>
+
+            <div class="i5">
+                <div class="i5_top">
+                    <img src="/img/device/waiting/10.gif" alt="" id="img10">
+                </div>
+                <div class="i5_bottom">
+                    <img src="/img/device/waiting/11.gif" alt="" id="img11">
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">包装区</a>
+
+            <div class="i6">
+                <img src="/img/device/waiting/12.gif" alt="" id="img12">
+            </div>
+        </li>
+        <li>
+            <a href="#">其他</a>
+
+            <div class="i7">
+                <img src="/img/device/waiting/13.gif" alt="" id="img13">
+            </div>
+        </li>
+
+
+    </ul>
+</div>
+<div th:include="include::footer"></div>
+
+<script src="/js/layui.js" charset="utf-8"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/device/util.js"></script>
+<script type="text/javascript" src="/js/device/monitor.js"></script>
+<script src="/js/plugins/contextMenu/js/contextMenu.js"></script>
+<script type="text/javascript">
+    layui.use('layer', function () {
+        var layer = layui.layer;
+        init();
+//        var table = layui.table;
+         blink_img(2,"warning");
+
+    });
+
+
+</script>
+</body>
+</html>
