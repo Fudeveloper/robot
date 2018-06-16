@@ -1,0 +1,51 @@
+
+.main {
+    text-align: center;
+    margin: 20px auto;
+    background-image: url("/img/device/bc.png");
+    background-repeat: repeat-x;
+    /*background-color: lightblue;*/
+    width: 1000px;
+    height: 500px;
+}
+
+.content li {
+    /*padding-top: 10px;*/
+    list-style-type: none;
+    /*width: 100px;*/
+    float: left;
+    margin: 2px;
+    text-align: center;
+}
+
+.content li a {
+    line-height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #00949e;
+}
+
+.i4_bottom img {
+    height: 80px;
+    width: 80px;
+}
+
+.i4 img {
+    height: 89.3333px;
+    width: 80px;
+}
+
+.i6 img, .i7 img {
+    height: 277px;
+}
+
+#title li {
+    padding-top: 10px;
+    float: left;
+    width: 100px;
+    text-align: center;
+    list-style-type: none;
+
+}
+
