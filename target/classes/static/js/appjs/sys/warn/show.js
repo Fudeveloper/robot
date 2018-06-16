@@ -9,7 +9,7 @@ function load(deptId) {
         .bootstrapTable(
             {
                 method : 'get', // 服务器数据的请求方式 get or post
-                url : prefix + "/list", // 服务器数据的加载地址
+                url : prefix + "/warns", // 服务器数据的加载地址
                 // showRefresh : true,
                 // showToggle : true,
                 // showColumns : true,
@@ -59,47 +59,72 @@ function load(deptId) {
                         title : '序号' // 列标题
                     },
                     {
-                        field : 'warnName',
-                        title : '报警方式'
+                        field : 'user',
+                        title : '触发报警人'
                     },
 
 
+                    {
+                        field : 'info',
+                        title : '报警信息',
+                        align : 'center',
+
+                    },
+                    {
+                        title : '开始时间',
+                        field : 'startTime',
+                        align : 'center',
+
+                    },
+                    {
+                        title : '结束时间',
+                        field : 'endTime',
+                        align : 'center',
+                        formatter : function(value, row, index) {
+                            if (Date.parse(value)>=new Date(2000,1,1)){
+                                return value
+                            }else{
+                                return  ;
+                            }
+
+                        }
+                    },
+                    {
+                        title : '报警发生地点',
+                        field : 'place',
+                        align : 'center',
+
+                    },
+                    {
+                        title : '解除报警用户',
+                        field : 'cancelUser',
+                        align : 'center',
+
+                    },
+                    {
+                        title : '报警代码',
+                        field : 'code',
+                        align : 'center',
+
+                    },
                     {
                         field : 'status',
-                        title : '状态',
+                        title : '操作',
                         align : 'center',
                         formatter : function(value, row, index) {
-                            if (value == '0') {
-                                return '<span class="label label-danger">关闭</span>';
-                            } else if (value == '1') {
-                                return '<span class="label label-primary">开启</span>';
+                            if (Date.parse(row.endTime)>=new Date(2000,1,1)){
+                                return "已结束"
+                            }else{
+                                var d =
+                                    '<a class="btn btn-warning btn-sm ' +  '" href="#" title="解除"  mce_href="#" onclick="remove(\''
+                                    + row.id
+                                    + '\')"><i class="fa fa-remove"></i></a> ';
+
+                                return  d ;
                             }
+
                         }
                     },
-                    {
-                        title : '操作',
-                        field : 'id',
-                        align : 'center',
-                        formatter : function(value, row, index) {
-                            var e = '<a  class="btn btn-primary btn-sm ' + s_edit_h + '" href="#" mce_href="#" title="编辑" onclick="edit(\''
-                                + row.id
-                                + '\')"><i class="fa fa-edit "></i></a> ';
-
-                            if (row.status===1){
-                                var d = '<a  class="btn btn-primary btn-sm ' +  '" href="#" mce_href="#" title="关闭" onclick="changeWarnStatus(\''
-                                    + row.id
-                                    + '\')"><i class="fa fa-toggle-on"></i></a> ';
-
-
-                            }else if(row.status===0){
-                                var d = '<a class="btn btn-primary btn-sm ' +  '" href="#" title="开启"  mce_href="#" onclick="changeWarnStatus(\''
-                                    + row.id
-                                    + '\')"><i class="fa fa-toggle-off"></i></a> ';
-                            }
-                            return e+d;
-
-                        }
-                    }
                 ]
             });
 }

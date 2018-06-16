@@ -7,11 +7,13 @@
         <id column="id" property="id" />
         <result column="warn_name" property="warnName" />
         <result column="status" property="status" />
+        <result column="receiver" property="receiver" />
+        <result column="content" property="content" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, warn_name AS warnName, status
+        id, warn_name AS warnName, status, receiver, content
     </sql>
 
 </mapper>

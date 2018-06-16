@@ -81,19 +81,22 @@ function load(deptId) {
                         field : 'id',
                         align : 'center',
                         formatter : function(value, row, index) {
+                            var e = '<a  class="btn btn-primary btn-sm ' + s_edit_h + '" href="#" mce_href="#" title="编辑" onclick="edit(\''
+                                + row.id
+                                + '\')"><i class="fa fa-edit "></i></a> ';
+
                             if (row.status===1){
-                                var e = '<a  class="btn btn-primary btn-sm ' +  '" href="#" mce_href="#" title="关闭" onclick="changeWarnStatus(\''
+                                var d = '<a  class="btn btn-primary btn-sm ' +  '" href="#" mce_href="#" title="关闭" onclick="changeWarnStatus(\''
                                     + row.id
                                     + '\')"><i class="fa fa-toggle-on"></i></a> ';
-                                return e;
+
 
                             }else if(row.status===0){
-                                var e = '<a class="btn btn-primary btn-sm ' +  '" href="#" title="开启"  mce_href="#" onclick="changeWarnStatus(\''
+                                var d = '<a class="btn btn-primary btn-sm ' +  '" href="#" title="开启"  mce_href="#" onclick="changeWarnStatus(\''
                                     + row.id
                                     + '\')"><i class="fa fa-toggle-off"></i></a> ';
-                                return e;
                             }
-
+                            return e+d;
 
                         }
                     }

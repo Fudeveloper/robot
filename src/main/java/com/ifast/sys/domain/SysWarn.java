@@ -15,7 +15,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author lik123
- * @since 2018-06-08
+ * @since 2018-06-16
  */
 @TableName("sys_warn")
 public class SysWarn extends Model<SysWarn> {
@@ -36,6 +36,15 @@ public class SysWarn extends Model<SysWarn> {
      * 报警方式状态：1.开启 0：关闭
      */
     private Integer status;
+    /**
+     * 报警信息接收者
+     */
+    private String receiver;
+    /**
+     * 报警内容
+
+     */
+    private String content;
 
 
     public Integer getId() {
@@ -62,6 +71,22 @@ public class SysWarn extends Model<SysWarn> {
         this.status = status;
     }
 
+    public String getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.id;
@@ -73,6 +98,8 @@ public class SysWarn extends Model<SysWarn> {
         ", id=" + id +
         ", warnName=" + warnName +
         ", status=" + status +
+        ", receiver=" + receiver +
+        ", content=" + content +
         "}";
     }
 }
