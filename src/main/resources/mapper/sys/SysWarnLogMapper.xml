@@ -3,7 +3,7 @@
 <mapper namespace="com.lik.robotcms.mapper.SysWarnLogMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.ifast.sys.domain.SysWarnLog">
+    <resultMap id="BaseResultMap" type="com.robotcms.sys.domain.SysWarnLog">
         <id column="id" property="id" />
         <result column="user" property="user" />
         <result column="info" property="info" />

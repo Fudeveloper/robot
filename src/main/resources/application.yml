@@ -37,7 +37,7 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*Mapper.xml
-  typeAliasesPackage: com.ifast.**.domain
+  typeAliasesPackage: com.robotcms.**.domain
   global-config:
     id-type: 0
     field-strategy: 2

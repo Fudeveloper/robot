@@ -1,7 +1,7 @@
 package ${package}.dao;
 
 import ${package}.domain.${className}DO;
-import com.ifast.common.base.BaseDao;
+import com.robotcms.common.base.BaseDao;
 
 /**
  * 

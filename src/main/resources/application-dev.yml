@@ -11,7 +11,7 @@ dream:
       appid: wx4f53594f9a6b3dcb
       appSecret: eec6482ba3804df05bd10895bace0579
 ifast:
-  project-name: ifast
+  project-name: robotcms
   project-root-u-r-l: http://localhost:8088/
   demoMode: false
   jwt:
@@ -24,7 +24,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/ifast?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/robotcms?useUnicode=true&characterEncoding=utf8
     username: root
     password: lik
     initialSize: 1

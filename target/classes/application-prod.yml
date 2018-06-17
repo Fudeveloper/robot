@@ -1,6 +1,6 @@
 ifast:
-  projectName: ifast
-  projectRootURL: http://ifast.site/
+  projectName: robotcms
+  projectRootURL: http://robotcms.site/
   demoMode: true
   jwt:
     userPrimaryKey: userId
@@ -12,7 +12,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/ifast?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/robotcms?useUnicode=true&characterEncoding=utf8
     username: root
     password: 1024key@root
     initialSize: 1
