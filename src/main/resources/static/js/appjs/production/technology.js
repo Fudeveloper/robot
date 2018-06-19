@@ -1,15 +1,19 @@
 var prefix = "/production/technology";
+
+function initTableHead() {
+    var $wuliao = $("th[data-field='wuliao']");
+    var $pingming = $("th[data-field='pingming']");
+    var $tuhao = $("th[data-field='tuhao']");
+
+    $wuliao.css("line-height", "34px").html("103001104");
+    $pingming.css("line-height", "34px").html("电箱下箱体总成(BC1-C) 版本B");
+    $tuhao.css("line-height", "34px").html("500105-00042");
+}
+
 $(function () {
     var deptId = '';
     load(deptId);
 
-   var $wuliao = $("th[data-field='wuliao']");
-   var $pingming = $("th[data-field='pingming']");
-   var $tuhao = $("th[data-field='tuhao']");
-
-    $wuliao.css("line-height","34px").html("103001104");
-    $pingming.css("line-height","34px").html("电箱下箱体总成(BC1-C) 版本B");
-    $tuhao.css("line-height","34px").html("500105-00042");
 
 });
 
@@ -19,9 +23,9 @@ function load(deptId) {
             {
                 method: 'get', // 服务器数据的请求方式 get or post
                 url: "http://123.207.68.28:8080/plan", // 服务器数据的加载地址
-                showRefresh: true,
+                // showRefresh: true,
                 // showToggle : true,
-                showColumns: true,
+                // showColumns: true,
                 iconSize: 'outline',
                 toolbar: '#exampleToolbar',
                 striped: true, // 设置为true会有隔行变色效果
@@ -61,11 +65,14 @@ function load(deptId) {
                         "rows": res.content   //数据
                     };
                 },
-                columns: [
+                onPostBody: function(){
+                    initTableHead();
+                },
+                    columns: [
                     //上表头
                     [
                         {
-                            field: '1',
+                            field: '',
                             title: '物料编码',
                         },
                         {
@@ -117,19 +124,19 @@ function load(deptId) {
                             title: '数控冲床'
                         },
                         {
-                            field: 'tuhao',
+                            field: 'shuliang',
                             title: '折弯机'
                         },
                         {
-                            field: 'tuhao',
+                            field: 'shuliang',
                             title: '压铆机'
                         },
                         {
-                            field: 'tuhao',
+                            field: 'shuliang',
                             title: '电焊机'
                         },
                         {
-                            field: 'panasonicNum',
+                            field: 'shuliang',
                             title: '焊机'
                         }
 
@@ -140,6 +147,8 @@ function load(deptId) {
 
 function reLoad() {
     $('#exampleTable').bootstrapTable('refresh');
+    initTableHead();
+
 }
 
 function add() {
