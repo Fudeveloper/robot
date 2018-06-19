@@ -39,6 +39,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.Filter;
 import java.util.*;
 
@@ -55,19 +56,17 @@ import java.util.*;
 
 @Configuration
 @ConfigurationProperties(prefix = "custom")
-@AutoConfigureAfter(SysLogoutConfigMapper.class)
+@AutoConfigureAfter(FirstShiroConfig.class)
 public class ShiroConfig implements EnvironmentAware {
 
     @Autowired
-    private SysLogoutConfigMapper sysLogoutConfigService;
+    private SysLogoutConfigMapper sysLogoutConfigMapper;
 
     private RelaxedPropertyResolver propertyResolver;
 
 
-
     @Bean
     SessionDAO sessionDAO() {
-        System.out.println("---------------------------sessionDAO");
 
         MemorySessionDAO sessionDAO = new MemorySessionDAO();
         return sessionDAO;
@@ -75,7 +74,6 @@ public class ShiroConfig implements EnvironmentAware {
 
     @Bean
     public SessionManager sessionManager() {
-        System.out.println("---------------------------sessionManager");
 
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
         Collection<SessionListener> listeners = new ArrayList<SessionListener>();
@@ -83,19 +81,28 @@ public class ShiroConfig implements EnvironmentAware {
         sessionManager.setSessionListeners(listeners);
         sessionManager.setSessionDAO(sessionDAO());
 
-//        SysLogoutConfig sysLogoutConfig = new SysLogoutConfig();
-//        sysLogoutConfig.setName("status");
-//        SysLogoutConfig name = sysLogoutConfigService.selectOne(sysLogoutConfig);
-//        String value = name.getValue();
-//        int i = Integer.parseInt(value);
+
+        SysLogoutConfig sysLogoutConfig = new SysLogoutConfig();
+        sysLogoutConfig.setName("status");
+        String status= sysLogoutConfigMapper.selectOne(sysLogoutConfig).getValue();
+
+        Integer timeout = -1000;
+
+
+        if ("1".equals(status)) {
+            SysLogoutConfig sysLogoutConfig1 = new SysLogoutConfig();
+            sysLogoutConfig1.setName("timeout");
+            String stringTimeOut = sysLogoutConfigMapper.selectOne(sysLogoutConfig1).getValue();
+            timeout = Integer.parseInt(stringTimeOut);
+        }
 
 //        SysLogoutConfigService sysLogoutConfigMapper = applicationContext.getBean(SysLogoutConfigService.class);
 //        SysLogoutConfig status = sysLogoutConfigService.selectById("status");
 //        String name = status.getName();
 //      读取配置文件的
-        String autoLogOutTime =propertyResolver.getProperty("autoLogOutTime");
-        long aLong = Long.parseLong(autoLogOutTime);
-        sessionManager.setGlobalSessionTimeout(aLong);
+//        String autoLogOutTime = propertyResolver.getProperty("autoLogOutTime");
+//        long aLong = Long.parseLong(autoLogOutTime);
+        sessionManager.setGlobalSessionTimeout(timeout);
         return sessionManager;
     }
 
@@ -190,10 +197,6 @@ public class ShiroConfig implements EnvironmentAware {
         return shiroFilterFactoryBean;
     }
 
-    @Bean
-    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
-        return new LifecycleBeanPostProcessor();
-    }
 
     @Bean
     public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
