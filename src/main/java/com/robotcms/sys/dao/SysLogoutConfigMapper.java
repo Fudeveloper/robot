@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @since 2018-06-18
  */
 
-@Component
+
 public interface SysLogoutConfigMapper extends BaseMapper<SysLogoutConfig> {
 
 }
