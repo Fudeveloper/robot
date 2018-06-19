@@ -4,7 +4,7 @@ package com.robotcms.api.pojo.vo;
  * <pre>
  * </pre>
  * 
- * <small> 2018年4月27日 | Aron</small>
+ *
  */
 public class TokenVO {
 

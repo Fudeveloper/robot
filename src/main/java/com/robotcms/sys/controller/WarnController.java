@@ -16,6 +16,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Field;
+
 
 /**
  * @author lik
@@ -43,7 +45,11 @@ public class WarnController extends AdminBaseController {
     @ResponseBody
     public Result<Page<SysWarn>> list(SysWarn sysWarn) {
         // 查询列表数据
+
         Wrapper<SysWarn> wrapper = new EntityWrapper<SysWarn>(sysWarn);
+//        Field[] fields=sysWarn.getClass().getDeclaredFields();
+
+//        wrapper.like(wrapper.get)
         Page<SysWarn> page = sysWarnService.selectPage(getPage(SysWarn.class), wrapper);
         return Result.ok(page);
     }

@@ -33,8 +33,8 @@ function load(deptId) {
                         // 说明：传入后台的参数包括offset开始索引，limit步长，sort排序列，order：desc或者,以及所有列的键值对
                         pageNumber : params.pageNumber,
                         pageSize : params.pageSize,
-                        name : $('#searchName').val(),
-                        deptId : deptId
+                        user : $('#searchUser').val(),
+
                     };
                 },
                 // //请求服务器数据时，你可以通过重写参数的方式添加一些额外的参数，例如 toolbar 中的参数 如果
@@ -141,59 +141,18 @@ function remove(id) {
 function edit(id) {
     layer.open({
         type : 2,
-        title : '用户修改',
+        title : '报警方式信息修改',
         maxmin : true,
         shadeClose : false,
-        area : [ '800px', '520px' ],
+        area : [ '800px', '430px' ],
         content : prefix + '/edit/' + id // iframe的url
     });
 }
-function resetPwd(id) {
-    layer.open({
-        type : 2,
-        title : '重置密码',
-        maxmin : true,
-        shadeClose : false, // 点击遮罩关闭层
-        area : [ '400px', '260px' ],
-        content : prefix + '/resetPwd/' + id // iframe的url
-    });
-}
-function batchRemove() {
-    var rows = $('#exampleTable').bootstrapTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
-    if (rows.length == 0) {
-        layer.msg("请选择要删除的数据");
-        return;
-    }
-    layer.confirm("确认要删除选中的'" + rows.length + "'条数据吗?", {
-        btn : [ '确定', '取消' ]
-        // 按钮
-    }, function() {
-        var ids = new Array();
-        // 遍历所有选择的行数据，取每条数据对应的ID
-        $.each(rows, function(i, row) {
-            ids[i] = row['id'];
-        });
-        $.ajax({
-            type : 'POST',
-            data : {
-                "ids" : ids
-            },
-            url : prefix + '/batchRemove',
-            success : function(r) {
-                if (r.code == 0) {
-                    layer.msg(r.msg);
-                    reLoad();
-                } else {
-                    layer.msg(r.msg);
-                }
-            }
-        });
-    }, function() {});
-}
+
 
 
 function changeWarnStatus(id) {
-    alert(id)
+    // alert(id)
     $.ajax({
         url : "/sys/warn/status/"+id,
         type : "POST",

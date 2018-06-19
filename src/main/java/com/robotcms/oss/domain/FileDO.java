@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
  * <pre>
  * 文件上传
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @TableName("sys_file")
 public class FileDO extends Model<FileDO> implements Serializable {

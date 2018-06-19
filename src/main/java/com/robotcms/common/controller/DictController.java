@@ -24,7 +24,7 @@ import java.util.Map;
  * 数据字典
  * </pre>
  * 
- * <small> 2018年3月23日 | Aron</small>
+ *
  */
 @Controller
 @RequestMapping("/common/sysDict")

@@ -16,13 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 
-/**
- * 
- * 
- * @author Aron
- * @email izenglong@163.com
- * @date 2018-04-06 01:05:22
- */
+
 
 @Controller
 @RequestMapping("/common/config")

@@ -11,7 +11,7 @@ import com.robotcms.common.utils.xss.JsoupUtil;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {  
     HttpServletRequest orgRequest = null;  

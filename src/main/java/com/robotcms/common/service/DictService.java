@@ -11,7 +11,7 @@ import com.robotcms.sys.domain.UserDO;
  * 数据字典
  * </pre>
  * 
- * <small> 2018年1月3日 | Aron</small>
+ * |
  */
 public interface DictService extends CoreService<DictDO> {
     

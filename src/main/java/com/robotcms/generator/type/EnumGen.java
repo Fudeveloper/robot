@@ -4,7 +4,7 @@ package com.robotcms.generator.type;
  * <pre>
  * </pre>
  * 
- * <small> 2018年5月30日 | Aron</small>
+ * |
  */
 public class EnumGen {
     public static enum KvType {

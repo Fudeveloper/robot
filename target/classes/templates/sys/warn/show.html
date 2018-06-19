@@ -8,15 +8,26 @@
     <div class="col-sm-12">
         <div class="ibox">
             <div class="ibox-body">
-                <div id="exampleToolbar" role="group">
-                    <button shiro:hasPermission="sys:role:add" type="button"
-                            class="btn btn-primary" onclick="add()">
-                        <i class="fa fa-plus" aria-hidden="true"></i>添加
-                    </button>
-                    <button shiro:hasPermission="sys:role:batchRemove" type="button"
-                            class="btn btn-danger" onclick="batchRemove()">
-                        <i class="fa fa-trash" aria-hidden="true"></i>删除
-                    </button>
+                <div class="fixed-table-toolbar">
+                    <div class="columns pull-left">
+                        <button type="button" class="btn  btn-danger"
+                                onclick="batchRemove()">
+                            <i class="fa fa-trash" aria-hidden="true"></i>删除
+                        </button>
+                    </div>
+                    <div class="columns pull-right" role="group">
+                        <button class="btn btn-success" onclick="reLoad()">
+                            <i class="fa fa-search" aria-hidden="true"></i>查询
+                        </button>
+                    </div>
+                    <div class="pull-right search col-md-2">
+                        <input id="searchUser" type="text" class="form-control"
+                               placeholder="触发报警人">
+                    </div>
+                    <div class="pull-right search col-md-2">
+                        <input id="searchCode" type="text" class="form-control"
+                               placeholder="报警代码">
+                    </div>
                 </div>
                 <table id="exampleTable" data-mobile-responsive="true">
                 </table>

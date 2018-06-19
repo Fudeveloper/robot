@@ -17,7 +17,7 @@ import com.robotcms.common.type.EnumErrorCode;
  * <pre>
  * </pre>
  * 
- * <small> 2018年4月27日 | Aron</small>
+ *
  */
 @Service
 public class UserServiceImpl extends CoreServiceImpl<AppUserDao, AppUserDO> implements UserService {

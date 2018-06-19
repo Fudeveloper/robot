@@ -7,9 +7,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * 加密工具类
- * 
- * @author Aron
- * @date 2017年7月1日
+ *
  */
 public class CodecUtils extends DigestUtils{
 

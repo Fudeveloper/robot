@@ -14,7 +14,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
  * <pre>
  * 微信配置表
  * </pre>
- * <small> 2018-04-11 23:27:06 | Aron</small>
+ *
  */
  @TableName("wx_mp_config")
 public class MpConfigDO implements Serializable {

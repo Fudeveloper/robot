@@ -4,7 +4,7 @@ package com.robotcms.common.type;
  * <pre>
  * 全局异常码
  * </pre>
- * <small> 2018年4月5日 | Aron</small>
+ * |
  */
 public enum EnumErrorCode {
 

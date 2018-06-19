@@ -23,7 +23,7 @@ import com.robotcms.sys.service.RoleService;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Service
 public class RoleServiceImpl extends ServiceImpl<RoleDao, RoleDO> implements RoleService {

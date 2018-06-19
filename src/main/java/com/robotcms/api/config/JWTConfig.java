@@ -4,7 +4,7 @@ package com.robotcms.api.config;
  * <pre>
  * </pre>
  * 
- * <small> 2018年4月28日 | Aron</small>
+ *
  */
 public class JWTConfig {
     private String userPrimaryKey;

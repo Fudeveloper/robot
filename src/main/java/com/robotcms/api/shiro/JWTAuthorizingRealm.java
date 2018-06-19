@@ -21,7 +21,7 @@ import java.util.Set;
 /**
  * <pre>
  * </pre>
- * <small> 2018年4月22日 | Aron</small>
+ *
  */
 @Service
 public class JWTAuthorizingRealm extends AuthorizingRealm {

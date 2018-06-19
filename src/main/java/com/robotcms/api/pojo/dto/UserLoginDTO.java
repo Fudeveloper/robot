@@ -4,7 +4,7 @@ package com.robotcms.api.pojo.dto;
  * <pre>
  * </pre>
  * 
- * <small> 2018年4月26日 | Aron</small>
+ *
  */
 public class UserLoginDTO {
     private String uname;

@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @TableName("sys_log")
 public class LogDO extends Model<LogDO> implements Serializable {

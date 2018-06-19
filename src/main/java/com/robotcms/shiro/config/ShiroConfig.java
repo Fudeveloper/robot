@@ -5,6 +5,9 @@ import com.robotcms.api.shiro.JWTAuthenticationFilter;
 import com.robotcms.api.shiro.JWTAuthorizingRealm;
 import com.robotcms.shiro.realm.IFastModularRealm;
 import com.robotcms.sys.config.BDSessionListener;
+import com.robotcms.sys.dao.SysLogoutConfigMapper;
+import com.robotcms.sys.domain.SysLogoutConfig;
+import com.robotcms.sys.service.SysLogoutConfigService;
 import com.robotcms.sys.shiro.SysUserAuthorizingRealm;
 import org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy;
 import org.apache.shiro.authz.Authorizer;
@@ -23,8 +26,18 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.bind.RelaxedPropertyResolver;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.Filter;
 import java.util.*;
@@ -35,29 +48,57 @@ import java.util.*;
  * . realm(cache)
  * . securityManager（realm）
  * . ShiroFilterFactoryBean 注册
- * 
+ *
  * </pre>
- * <small> 2018年4月18日 | Aron</small>
+ * |
  */
+
 @Configuration
-public class ShiroConfig {
-    
+@ConfigurationProperties(prefix = "custom")
+@AutoConfigureAfter(SysLogoutConfigMapper.class)
+public class ShiroConfig implements EnvironmentAware {
+
+    @Autowired
+    private SysLogoutConfigMapper sysLogoutConfigService;
+
+    private RelaxedPropertyResolver propertyResolver;
+
+
+
     @Bean
     SessionDAO sessionDAO() {
+        System.out.println("---------------------------sessionDAO");
+
         MemorySessionDAO sessionDAO = new MemorySessionDAO();
         return sessionDAO;
     }
 
     @Bean
     public SessionManager sessionManager() {
+        System.out.println("---------------------------sessionManager");
+
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
         Collection<SessionListener> listeners = new ArrayList<SessionListener>();
         listeners.add(new BDSessionListener());
         sessionManager.setSessionListeners(listeners);
         sessionManager.setSessionDAO(sessionDAO());
+
+//        SysLogoutConfig sysLogoutConfig = new SysLogoutConfig();
+//        sysLogoutConfig.setName("status");
+//        SysLogoutConfig name = sysLogoutConfigService.selectOne(sysLogoutConfig);
+//        String value = name.getValue();
+//        int i = Integer.parseInt(value);
+
+//        SysLogoutConfigService sysLogoutConfigMapper = applicationContext.getBean(SysLogoutConfigService.class);
+//        SysLogoutConfig status = sysLogoutConfigService.selectById("status");
+//        String name = status.getName();
+//      读取配置文件的
+        String autoLogOutTime =propertyResolver.getProperty("autoLogOutTime");
+        long aLong = Long.parseLong(autoLogOutTime);
+        sessionManager.setGlobalSessionTimeout(aLong);
         return sessionManager;
     }
-    
+
     @Bean
     public CacheManager getCacheManager() {
         EhCacheManager cacheManager = new EhCacheManager();
@@ -65,14 +106,14 @@ public class ShiroConfig {
 //        CacheManager cacheManager = new MemoryConstrainedCacheManager();
         return cacheManager;
     }
-    
+
     @Bean
     SysUserAuthorizingRealm userRealm() {
         SysUserAuthorizingRealm userRealm = new SysUserAuthorizingRealm();
         userRealm.setCacheManager(getCacheManager());
         return userRealm;
     }
-    
+
     @Bean
     JWTAuthorizingRealm jwtAuthorizingRealm() {
         JWTAuthorizingRealm jwtAuthorizingRealm = new JWTAuthorizingRealm();
@@ -89,7 +130,7 @@ public class ShiroConfig {
         authenticator.setRealms(realms);
         return authenticator;
     }
-    
+
     @Bean
     Authorizer getAuthorizer() {
         ModularRealmAuthorizer authorizer = new ModularRealmAuthorizer();
@@ -99,7 +140,7 @@ public class ShiroConfig {
         authorizer.setRealms(realms);
         return authorizer;
     }
-    
+
     @Bean
     SecurityManager securityManager() {
         DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
@@ -117,12 +158,12 @@ public class ShiroConfig {
     @Bean
     ShiroFilterFactoryBean shiroFilterFactoryBean() {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
-        
-     // 添加jwt过滤器
+
+        // 添加jwt过滤器
         Map<String, Filter> filterMap = new HashMap<>();
         filterMap.put("jwt", new JWTAuthenticationFilter());
         shiroFilterFactoryBean.setFilters(filterMap);
-        
+
         shiroFilterFactoryBean.setSecurityManager(securityManager());
         shiroFilterFactoryBean.setLoginUrl("/login");
         shiroFilterFactoryBean.setSuccessUrl("/index");
@@ -173,4 +214,9 @@ public class ShiroConfig {
         return authorizationAttributeSourceAdvisor;
     }
 
+    //
+    @Override
+    public void setEnvironment(Environment environment) {
+        this.propertyResolver = new RelaxedPropertyResolver(environment, "custom.");
+    }
 }

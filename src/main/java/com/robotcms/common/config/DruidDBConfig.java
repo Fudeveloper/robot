@@ -18,9 +18,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 
-/**
- * Created by PrimaryKey on 17/2/4.
- */
+
 @Configuration
 public class DruidDBConfig {
     private Logger logger = LoggerFactory.getLogger(DruidDBConfig.class);
@@ -99,6 +97,8 @@ public class DruidDBConfig {
     @Bean(initMethod = "init", destroyMethod = "close") // 声明其为Bean实例
     @Primary // 在同样的DataSource中，首先使用被标注的DataSource
     public DataSource dataSource() {
+        System.out.println("---------------------------dataSource");
+
         DruidDataSource datasource = new DruidDataSource();
 
         datasource.setUrl(this.dbUrl);

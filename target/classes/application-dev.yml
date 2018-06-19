@@ -16,7 +16,7 @@ ifast:
   demoMode: false
   jwt:
     userPrimaryKey: userId
-    expireTime: 3000000
+    expireTime: 300000
 logging:
   level:
     com.ifast: info
@@ -51,3 +51,5 @@ spring:
     #useGlobalDataSourceStat: true
   session: 
     store-type: HASH_MAP
+shiro:
+  globalSessionTimeout: 2000

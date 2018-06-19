@@ -11,7 +11,7 @@ import com.robotcms.common.utils.Result;
  * <pre>
  * </pre>
  * 
- * <small> 2018年5月1日 | Aron</small>
+ * |
  */
 @RestController
 @RequestMapping("/shiro")

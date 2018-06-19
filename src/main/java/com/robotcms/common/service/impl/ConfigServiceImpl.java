@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * <pre>
  * </pre>
- * <small> 2018年4月6日 | Aron</small>
+ * |
  */
 @Service
 public class ConfigServiceImpl extends CoreServiceImpl<ConfigDao, ConfigDO> implements ConfigService {

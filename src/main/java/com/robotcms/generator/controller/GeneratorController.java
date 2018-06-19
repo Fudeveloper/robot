@@ -25,7 +25,7 @@ import java.util.Map;
  * <pre>
  * 代码生成
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @RequestMapping("/common/generator")
 @Controller

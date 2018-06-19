@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @TableName("sys_menu")
 public class MenuDO implements Serializable {

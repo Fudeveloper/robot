@@ -9,11 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-/**
- * @author Aron
- * @email izenglong@163.com
- * @date 2018-04-06 01:05:22
- */
+
 @TableName("sys_config")
 public class ConfigDO extends Model<ConfigDO> implements Serializable {
     @TableField(exist = false)

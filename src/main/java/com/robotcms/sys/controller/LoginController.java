@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Controller
 public class LoginController extends AdminBaseController {

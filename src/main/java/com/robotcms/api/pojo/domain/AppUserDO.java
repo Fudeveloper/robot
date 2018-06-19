@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
  * <pre>
  * </pre>
  * 
- * <small> 2018年4月27日 | Aron</small>
+ *
  */
 @TableName("app_user")
 public class AppUserDO implements Serializable {

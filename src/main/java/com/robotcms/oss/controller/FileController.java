@@ -24,7 +24,7 @@ import java.util.Arrays;
  * 文件上传
  * </pre>
  * <p>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Controller
 @RequestMapping("/common/sysFile")

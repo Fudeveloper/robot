@@ -12,7 +12,7 @@ import com.robotcms.sys.domain.MenuDO;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Service
 public interface MenuService extends IService<MenuDO> {

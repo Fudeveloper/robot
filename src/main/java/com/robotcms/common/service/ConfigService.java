@@ -10,7 +10,7 @@ import java.util.Map;
  * <pre>
  * </pre>
  * 
- * <small> 2018年4月6日 | Aron</small>
+ * |
  */
 public interface ConfigService extends CoreService<ConfigDO> {
     ConfigDO getByKey(String k);

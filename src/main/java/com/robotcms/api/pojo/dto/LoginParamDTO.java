@@ -3,7 +3,7 @@ package com.robotcms.api.pojo.dto;
 /**
  * <pre>
  * </pre>
- * <small> 2018年4月18日 | Aron</small>
+ *
  */
 public class LoginParamDTO {  
     private String clientId;  

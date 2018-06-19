@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
  * <pre>
  * 部门管理
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @TableName("sys_dept")
 public class DeptDO implements Serializable {

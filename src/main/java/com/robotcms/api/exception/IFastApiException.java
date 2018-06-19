@@ -5,7 +5,7 @@ package com.robotcms.api.exception;
  * API异常基类
  * </pre>
  * 
- * <small> 2018年4月19日 | Aron</small>
+ *
  */
 public class IFastApiException extends RuntimeException {
 

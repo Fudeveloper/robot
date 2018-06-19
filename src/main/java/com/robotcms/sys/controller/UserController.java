@@ -39,7 +39,7 @@ import com.robotcms.sys.vo.UserVO;
  * <pre>
  * </pre>
  * 
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @RequestMapping("/sys/user")
 @Controller

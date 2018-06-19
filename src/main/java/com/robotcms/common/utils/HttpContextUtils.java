@@ -10,7 +10,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * 
  * <pre>
  * </pre>
- * <small> 2018年1月15日 | Aron</small>
+ * |
  */
 public class HttpContextUtils {
 	public static HttpServletRequest getHttpServletRequest() {

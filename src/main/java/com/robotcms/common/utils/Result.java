@@ -5,9 +5,7 @@ package com.robotcms.common.utils;
  * 
  * 自定义响应结构
  * </pre>
- * 
- * @author Aron
- * @date 2017年5月9日
+ *
  */
 public class Result<T> {
 

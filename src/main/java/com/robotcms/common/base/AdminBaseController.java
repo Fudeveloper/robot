@@ -17,7 +17,7 @@ import com.robotcms.sys.domain.UserDO;
  * <pre>
  * </pre>
  * 
- * <small> 2018年2月25日 | Aron</small>
+ * |
  */
 public abstract class AdminBaseController {
 
@@ -44,7 +44,7 @@ public abstract class AdminBaseController {
      * 自动获取分页参数，返回分页对象page
      * </pre>
      * 
-     * <small> 2018年4月15日 | Aron</small>
+     * |
      * 
      * @param e
      * @return

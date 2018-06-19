@@ -18,7 +18,7 @@ import com.robotcms.oss.service.FileService;
  * <pre>
  * </pre>
  * 
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Service
 public class FileServiceImpl extends CoreServiceImpl<FileDao, FileDO> implements FileService {

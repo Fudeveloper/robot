@@ -17,7 +17,7 @@ import com.robotcms.sys.service.DeptService;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Service
 public class DeptServiceImpl extends ServiceImpl<DeptDao, DeptDO> implements DeptService {

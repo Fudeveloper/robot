@@ -2,6 +2,8 @@ banner:
   location: config/banner.txt
   encoding: utf-8
 server:
+  session:
+    timeout: 2
   context-path: /
   session-timeout: 1800
   tomcat:
@@ -56,3 +58,6 @@ logging:
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+custom:
+  autoLogOutTime: 600000

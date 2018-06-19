@@ -10,7 +10,7 @@ import com.robotcms.job.domain.TaskDO;
  * <pre>
  * 定时任务
  * </pre>
- * <small> 2018年3月22日 | Aron</small>
+ *
  */
 public interface JobService extends CoreService<TaskDO> {
 	

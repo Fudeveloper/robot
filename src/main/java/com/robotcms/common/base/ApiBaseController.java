@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  * <pre>
  * </pre>
  * 
- * <small> 2018年2月25日 | Aron</small>
+ * |
  */
 public abstract class ApiBaseController {
 
@@ -44,7 +44,7 @@ public abstract class ApiBaseController {
      * 自动获取分页参数，返回分页对象page
      * </pre>
      * 
-     * <small> 2018年4月15日 | Aron</small>
+     * |
      * 
      * @param e
      * @return

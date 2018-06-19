@@ -6,7 +6,7 @@ import org.apache.shiro.authc.AuthenticationToken;
  * <pre>
  * </pre>
  * 
- * <small> 2018年4月27日 | Aron</small>
+ *
  */
 public class JWTAuthenticationTokenToken implements AuthenticationToken {
 

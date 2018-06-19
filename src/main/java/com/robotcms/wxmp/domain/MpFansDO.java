@@ -14,7 +14,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
  * <pre>
  * 微信粉丝表
  * </pre>
- * <small> 2018-04-11 23:27:06 | Aron</small>
+ *
  */
  @TableName("wx_mp_fans")
 public class MpFansDO implements Serializable {

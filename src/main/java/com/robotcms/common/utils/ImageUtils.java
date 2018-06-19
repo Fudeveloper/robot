@@ -16,10 +16,7 @@ import javax.imageio.stream.ImageInputStream;
 
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- * @author gaoyuzhe
- * @date 2017/12/18.
- */
+
 public class ImageUtils {
     /***
      * 剪裁图片

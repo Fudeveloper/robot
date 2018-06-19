@@ -17,7 +17,7 @@ import com.robotcms.common.utils.SpringContextHolder;
  * <pre>
  * robotcms 入口
  * </pre>
- * <small> 2018年3月22日 | Aron</small>
+ *
  */
 @EnableTransactionManagement
 @ServletComponentScan
@@ -30,7 +30,7 @@ public class Application {
 	/**
 	 * <pre>
 	 * </pre>
-	 * <small> 2018年3月22日 | Aron</small>
+	 *
 	 *
 	 * @param args
 	 */

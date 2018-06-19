@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.service.impl.ServiceImpl;
  * 通用业务层实现
  * </pre>
  * 
- * <small> 2018年1月9日 | Aron</small>
+ * |
  * 
  * @param <M> mapper
  * @param <T> entity

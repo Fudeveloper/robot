@@ -30,7 +30,7 @@ import com.robotcms.job.domain.ScheduleJob;;
  * <pre>
  * 定时任务管理
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Service
 public class QuartzManager {

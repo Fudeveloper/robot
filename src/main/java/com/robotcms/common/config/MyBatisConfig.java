@@ -16,13 +16,7 @@ public class MyBatisConfig {
 //        return new PerformanceInterceptor();
 //    }
 
-    /**
-     * 分页插件
-     * 
-     * @return
-     * @author zhongweiyuan
-     * @date 2018年4月14日下午4:13:15
-     */
+
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();

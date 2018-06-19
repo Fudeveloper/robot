@@ -19,7 +19,7 @@ function load(deptId) {
                 dataType : "json", // 服务器返回的数据类型
                 pagination : true, // 设置为true会在底部显示分页条
                 singleSelect : false, // 设置为true将禁止多选
-                // contentType : "application/x-www-form-urlencoded",
+                contentType : "application/x-www-form-urlencoded",
                 // //发送到服务器的数据编码类型
                 pageSize : 10, // 如果设置了分页，每页数据条数
                 pageNumber : 1, // 如果设置了分布，首页页码
@@ -27,14 +27,16 @@ function load(deptId) {
                 showColumns : false, // 是否显示内容下拉框（选择显示的列）
                 sidePagination : "server", // 设置在哪里进行分页，可选值为"client" 或者
                 queryParamsType : "",
+                silent : true,
                 // //设置为limit则会发送符合RESTFull格式的参数
                 queryParams : function(params) {
                     return {
                         // 说明：传入后台的参数包括offset开始索引，limit步长，sort排序列，order：desc或者,以及所有列的键值对
                         pageNumber : params.pageNumber,
                         pageSize : params.pageSize,
-                        name : $('#searchName').val(),
-                        deptId : deptId
+                        user : $('#searchUser').val(),
+                        // deptId : deptId
+                        code:$("#searchCode").val()
                     };
                 },
                 // //请求服务器数据时，你可以通过重写参数的方式添加一些额外的参数，例如 toolbar 中的参数 如果

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * <pre>
  * 定时任务工厂
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Component
 public class JobFactory extends AdaptableJobFactory {

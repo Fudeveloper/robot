@@ -5,7 +5,7 @@ package com.robotcms.oss.sdk;
  * 七牛对象存储配置
  * </pre>
  * 
- * <small> 2018年4月6日 | Aron</small>
+ * |
  */
 public class OSSConfig {
     private String qiNiuAccessKey;

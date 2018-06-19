@@ -26,7 +26,7 @@ import com.robotcms.sys.domain.UserDO;
  * <pre>
  * 日志切面
  * </pre>
- * <small> 2018年3月22日 | Aron</small>
+ *
  */
 @Aspect
 @Component
@@ -54,7 +54,7 @@ public class LogAspect {
      * <pre>
      * 保存日志
      * </pre>
-     * <small> 2018年3月22日 | Aron</small>
+     *
      * @param joinPoint
      * @param time
      */

@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSON;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  * @param <T>
  */
 public class Tree<T> {

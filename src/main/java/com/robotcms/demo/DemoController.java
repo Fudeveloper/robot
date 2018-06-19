@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 测试专用
  * </pre>
  * 
- * <small> 2018年1月16日 | Aron</small>
+ * |
  */
 @RestController
 @RequestMapping("/test")

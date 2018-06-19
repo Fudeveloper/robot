@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * <pre>
  * </pre>
- * <small> 2018年4月22日 | Aron</small>
+ *
  */
 public class JWTAuthenticationFilter extends BasicHttpAuthenticationFilter {
 

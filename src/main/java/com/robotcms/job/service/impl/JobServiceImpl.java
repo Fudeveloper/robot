@@ -19,7 +19,7 @@ import com.robotcms.job.service.JobService;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Service
 public class JobServiceImpl extends CoreServiceImpl<TaskDao, TaskDO> implements JobService {

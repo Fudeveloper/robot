@@ -11,7 +11,7 @@ import com.robotcms.sys.domain.RoleDO;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @Service
 public interface RoleService extends IService<RoleDO> {

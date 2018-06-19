@@ -5,12 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.robotcms.api.config.JWTConfig;
 
-/**
- * <pre>
- * </pre>
- * 
- * <small> 2018年4月6日 | Aron</small>
- */
+
 @Component
 @ConfigurationProperties(prefix = "robotcms")
 public class IFastConfig {

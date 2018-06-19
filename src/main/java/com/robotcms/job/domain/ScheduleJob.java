@@ -9,7 +9,7 @@ import org.quartz.JobExecutionException;
 /**
  * <pre>
  * </pre>
- * <small> 2018年3月23日 | Aron</small>
+ * |
  */
 @SuppressWarnings("serial")
 public class ScheduleJob implements Serializable, Job {

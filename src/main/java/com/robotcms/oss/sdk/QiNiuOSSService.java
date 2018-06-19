@@ -16,7 +16,7 @@ import com.qiniu.util.Auth;
  * 七牛对象存储服务
  * </pre>
  * 
- * <small> 2018年4月6日 | Aron</small>
+ * |
  */
 public class QiNiuOSSService {
 
