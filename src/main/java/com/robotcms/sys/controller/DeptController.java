@@ -31,11 +31,12 @@ import java.util.Map;
 @RequestMapping("/sys/dept")
 public class DeptController extends AdminBaseController {
     private String prefix = "sys/dept";
+
     @Autowired
     private DeptService sysDeptService;
 
     @GetMapping()
-    @Log("进入部分页面")
+    @Log("进入部门页面")
     @RequiresPermissions("system:sysDept:sysDept")
     String dept() {
         return prefix + "/dept";

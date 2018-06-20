@@ -2,6 +2,8 @@ var prefix = "/production/technology";
 var allData = null;
 //上一个detailRow索引
 var lastDetailRowIndex = 0;
+// detailRow 之间的间隔，
+var ROW_DETAIL_SPACING = 2;
 $(function () {
     var deptId = '';
     load(deptId);
@@ -56,10 +58,12 @@ function load(deptId) {
                 },
                 detailView: true,
                 detailFormatter: function (index, row, detailRow) {
+
+
                     if ((index + 1) % 2 == 0) {
                         // var startElement="<a>小计</a>";
-                        console.log(allData)
-                        console.log(lastDetailRowIndex);
+                        // console.log(allData)
+                        console.log("lastDetailRowIndex"+lastDetailRowIndex);
                         var usefulData = allData.slice(lastDetailRowIndex, index + 1);
                         if (usefulData === undefined || usefulData.length === 0) {
                             // alert(1)
@@ -68,7 +72,11 @@ function load(deptId) {
                         console.log("-------------")
                         console.log(usefulData)
                         //更新此次DetailRowIndex
-                        lastDetailRowIndex = index + 1;
+                        if (lastDetailRowIndex>=this.pageSize-ROW_DETAIL_SPACING){
+                            lastDetailRowIndex=0
+                        }else{
+                            lastDetailRowIndex = index + 1;
+                        }
 
                         var jiaoqi = usefulData[0]["shijian"];
                         var shuliang = 0;
@@ -85,20 +93,24 @@ function load(deptId) {
                             //    开始时间：取最早日期
                             //    结束日期：取最迟日期
                             //    执行计划：
-                        });
 
+                        });
+                        console.log("shuliang:"+shuliang)
                         var allWidth = getAllwidth();
-                        var firstTdWidth = allWidth[0]+allWidth[1]+allWidth[2]-10;
+                        var firstTdWidth = allWidth[0]+allWidth[1]+allWidth[2]-11;
                         var width2 = allWidth[3];
-                        console.log(firstTdWidth);
+                        // console.log(firstTdWidth);
                         var elements = []
 
                         var firstElement = $("<td>小计</td>").innerWidth(firstTdWidth);
-                        var element2 = $("<td>"+jiaoqi+"</td>").innerWidth(width2)
-                        var element3 =$("<td>"+shuliang+"</td>").innerWidth(allWidth[4])
+                        var element2 = $("<td>"+jiaoqi+"</td>").innerWidth(width2-3)
+                        var element3 =$("<td>"+shuliang+"</td>").innerWidth(allWidth[4]-2.5)
+                        var element4 =$("<td>"+shuliang+"</td>").innerWidth(allWidth[5]-2.5)
                         elements[0]=firstElement
                         elements[1]=element2
                         elements[2]=element3
+                        elements[3]=element4
+
 
                         return elements
 
@@ -115,7 +127,7 @@ function load(deptId) {
                 // 返回false将会终止请求
                 responseHandler: function (res) {
                     allData = res.content;
-                    console.log(allData);
+                    // console.log(allData);
                     // console.log(res);
                     // console.log(res.totalElements);
                     // console.log(res.content);
