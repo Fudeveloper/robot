@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/device")
 @Controller
 public class DeviceController {
-    String prefix = "/device";
+    String prefix = "device";
 
     @Log("进入设备监视页面")
     @GetMapping("/monitor")

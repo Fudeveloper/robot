@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/production")
 @Controller
 public class ProductionController extends AdminBaseController {
-    String prefix = "/production";
+    String prefix = "production";
     @Autowired
     private SysWarnService sysWarnService;
 

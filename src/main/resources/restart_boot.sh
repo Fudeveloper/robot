@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 export JAVA_HOME=/home/jdk1.8.0_111
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
