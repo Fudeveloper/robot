@@ -10,7 +10,7 @@ import com.robotcms.sys.domain.DeptDO;
  * |
  */
 public interface DeptDao extends BaseDao<DeptDO> {
-	
+
 	Long[] listParentDept();
 	
 	int getDeptUserNumber(Long deptId);

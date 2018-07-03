@@ -27,8 +27,6 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 // 页面标题
                 .title("功能测试")
-                // 创建人
-                .contact(new Contact("Aron", "izenglong@163.com", "izenglong@163.com"))
                 // 版本号
                 .version("1.0")
                 // 描述
