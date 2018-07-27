@@ -1,4 +1,8 @@
 function init() {
+
+    var init_status = "waiting";
+    init_imgs_by_status(init_status);
+    // {"normal","running","waiting","warning"}
     var status_enums = {1:"正常",2:"待机",3:"运行",4:"故障未报修",5:"故障已报修"};
     // alert(status_enums[a])
     $("#img1").contextMenu({
@@ -64,5 +68,13 @@ function cancel_blink_img(img_id) {
     $("#" + img_id).attr("src", construct_img_path("warning", 2))
 }
 
+
+function init_imgs_by_status(init_status) {
+
+    var imgs=$("img");
+    $.each(imgs,function (index,img) {
+        $(img).attr("src",construct_img_path(init_status,get_img_index_by_element(this)))
+    })
+}
 
 

@@ -133,3 +133,8 @@ function getQueryString(name) {
     if (r != null) return unescape(r[2]);
     return null;
 }
+
+function get_img_index_by_element(img) {
+    var id =  $(img).attr("id")
+    return id.split("img")[1]
+}

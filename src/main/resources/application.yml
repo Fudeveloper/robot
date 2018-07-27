@@ -37,7 +37,7 @@ spring:
 #      数据库账号
       username: root
 #      数据库密码
-      password: wo951127
+      password: lik
       initialSize: 1
       minIdle: 3
       maxActive: 20
